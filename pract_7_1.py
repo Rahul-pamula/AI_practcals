@@ -86,5 +86,3 @@ if __name__ == "__main__":
             print_board(step)
     else:
         print("No solution found.")
-
-

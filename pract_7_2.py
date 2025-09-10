@@ -9,6 +9,8 @@ goal_state = [
 goal_tuple = tuple(tuple(row) for row in goal_state)
 
 # Get user input for initial state
+
+
 def get_initial_state():
     print("Enter 9 digits (0-8) with 0 as the blank (e.g., 283104765):")
     while True:
@@ -19,12 +21,16 @@ def get_initial_state():
         print("Invalid input. Please enter all digits 0-8 exactly once.")
 
 # Display the puzzle board
+
+
 def display_board(board):
     for row in board:
         print(" ".join(str(x) if x != 0 else '_' for x in row))
     print()
 
 # Find the position of the blank tile (0)
+
+
 def find_blank(board):
     for i in range(3):
         for j in range(3):
@@ -32,6 +38,8 @@ def find_blank(board):
                 return i, j
 
 # Generate possible moves from current board
+
+
 def get_possible_moves(board):
     i, j = find_blank(board)
     next_states = []
@@ -63,6 +71,8 @@ def get_possible_moves(board):
     return next_states
 
 # BFS algorithm to solve 8-puzzle
+
+
 def bfs(start):
     start_tuple = tuple(tuple(row) for row in start)
     queue = deque([(start, [])])
@@ -83,6 +93,7 @@ def bfs(start):
                 queue.append((next_board, path + [current_board]))
 
     return None  # No solution
+
 
 # Main program
 if __name__ == "__main__":
